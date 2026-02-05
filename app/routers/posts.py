@@ -4,6 +4,7 @@ from fastapi.params import Body
 from typing import Optional, List 
 from sqlalchemy.orm import Session
 from ..database import get_db
+
 router=APIRouter(prefix="/posts")
 
 @router.get("/",response_model=List[schema.ResponsePost])

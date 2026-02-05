@@ -2,7 +2,7 @@
 
 
 from .database import engine, SessionLocal, get_db
-from .routers import posts,user
+from .routers import posts,user,auth
 from . import models
 from fastapi import FastAPI
 
@@ -14,6 +14,7 @@ app=FastAPI()
     
 app.include_router(posts.router) 
 app.include_router(user.router)
+app.include_router(auth.router)
 
 @app.get("/")
 async def root():
